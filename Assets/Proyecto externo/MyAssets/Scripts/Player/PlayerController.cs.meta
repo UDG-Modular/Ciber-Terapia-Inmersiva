@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4c4300d6c61c6cdddbe60304641f5a9e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _characterController: {instanceID: 0}
+  - _playerModel: {fileID: 919132149155446097, guid: 891927b59b9fbc98fb0c8b7f8b642e02, type: 3}
+  - _playerAnimation: {instanceID: 0}
+  - _playerCamera: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
