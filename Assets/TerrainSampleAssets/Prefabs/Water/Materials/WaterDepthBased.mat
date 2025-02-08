@@ -135,7 +135,7 @@ Material:
     - _EnableFogOnTransparent: 1
     - _Fresnel: -0.18
     - _NormalStrength: 0.01
-    - _Normal_Strength: 0.697
+    - _Normal_Strength: 0.061
     - _OpaqueCullMode: 2
     - _QueueControl: 1
     - _QueueOffset: 0
@@ -193,7 +193,7 @@ Material:
     - _Fresnel_Remap: {r: 0.66, g: 1, b: 0, a: 0}
     - _Rim_Movement: {r: 0.03, g: 0.044, b: 0, a: 0}
     - _Rim_Texture_Repeats: {r: 90, g: 90, b: 0, a: 0}
-    - _Shallow_Water_Color: {r: 0.33935562, g: 0.45351076, b: 0.5849056, a: 0}
+    - _Shallow_Water_Color: {r: 0.01886791, g: 0.01886791, b: 0.01886791, a: 1}
     - _Tiling: {r: 18, g: 18, b: 0, a: 0}
     - _fresnel_Remap: {r: 0.66, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []

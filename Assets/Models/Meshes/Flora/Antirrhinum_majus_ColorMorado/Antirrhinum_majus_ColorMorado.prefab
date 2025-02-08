@@ -96,4 +96,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5634f92edc3afb4c58acb9e7d316d692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cullingDistance: 20
+  cullingDistance: 40
