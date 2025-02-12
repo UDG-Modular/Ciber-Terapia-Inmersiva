@@ -1,70 +1,65 @@
 using System;
-using System.IO;
+using System.Threading.Tasks;
 using UnityEngine;
+using MongoDB.Driver;
+using MongoDB.Bson;
 
-public class RecordPositionToCSV : MonoBehaviour
+public class RecordPositionToMongo : MonoBehaviour
 {
-    // Hardcoded string for the filename
-    private string defaultString = "NombreUsuario"; // Replace "Example" with your desired string
-
-    // Time interval for recording position (in seconds)
+    public string defaultString = "NombreUsuario"; // Identificador del usuario
     public float recordInterval = 1.0f;
     private float timer;
-
-    // File path for the current session
-    private string filePath;
+    private IMongoCollection<BsonDocument> collection;
+    private IMongoDatabase database;
 
     private void Start()
     {
-        // Generate the file name based on the current date, time, and default string
-        string timestamp = DateTime.Now.ToString("dd-MM-yy-HH-mm");
-        string fileName = $"{timestamp}-{defaultString}.csv";
+        ConnectToMongo();
+    }
 
-        // Relative path within the Unity project
-        string relativePath = Path.Combine("Assets/PlayerData", fileName);
-
-        // Ensure the directory exists
-        string directory = Path.GetDirectoryName(relativePath);
-        if (!Directory.Exists(directory))
+    private void ConnectToMongo()
+    {
+        try
         {
-            Directory.CreateDirectory(directory);
+            var client = new MongoClient(connectionString);
+            database = client.GetDatabase("Coordenadas_Jugador");
+            string dateSuffix = DateTime.UtcNow.ToString("yyyy-MM-dd");
+            string collectionName = $"{defaultString}-{dateSuffix}";
+            collection = database.GetCollection<BsonDocument>(collectionName);
+            Debug.Log("Conexi�n exitosa a MongoDB");
         }
-
-        // Set the file path for this session
-        filePath = Path.GetFullPath(relativePath);
-
-        // Create or overwrite the file and write the header
-        using (StreamWriter writer = new StreamWriter(filePath, false))
+        catch (Exception ex)
         {
-            writer.WriteLine("Time,X,Y,Z");
+            Debug.LogError("Error de conexi�n a MongoDB: " + ex.Message);
         }
-
-        Debug.Log("Saving positions to: " + filePath);
     }
 
     private void Update()
     {
-        // Update the timer
         timer += Time.deltaTime;
-
-        // Record the position at regular intervals
         if (timer >= recordInterval)
         {
-            RecordPosition();
-            timer = 0f; // Reset the timer
+            RecordPositionAsync();
+            timer = 0f;
         }
     }
 
-    private void RecordPosition()
+    private async void RecordPositionAsync()
     {
-        // Get the current time and position
         float currentTime = Time.time;
         Vector3 position = transform.position;
 
-        // Append the position to the CSV file
-        using (StreamWriter writer = new StreamWriter(filePath, true))
+        var document = new BsonDocument
         {
-            writer.WriteLine($"{currentTime},{position.x},{position.y},{position.z}");
-        }
+            { "usuario", defaultString },
+            { "tiempo", currentTime },
+            { "x", position.x },
+            { "y", position.y },
+            { "z", position.z },
+            { "timestamp", DateTime.UtcNow }
+        };
+
+        await Task.Run(() => collection.InsertOne(document));
+        //Debug.Log("Posici�n guardada en MongoDB: " + document.ToJson());
     }
 }

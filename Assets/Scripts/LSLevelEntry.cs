@@ -34,7 +34,6 @@ public class LSLevelEntry : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(canLoadLevel);
         if (rightPrimaryButton.action.IsPressed() && canLoadLevel && !_levelLoading)
         {
             canLoadLevel = false;

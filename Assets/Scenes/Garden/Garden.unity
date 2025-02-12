@@ -21641,6 +21641,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2683233320622495267, guid: d39b387ff5baa5a45bc8f0381a4f1dea,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6340653054485333664, guid: d39b387ff5baa5a45bc8f0381a4f1dea,
         type: 3}
       propertyPath: terrain
@@ -21820,6 +21825,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9034580996819130560, guid: d39b387ff5baa5a45bc8f0381a4f1dea,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9034580996819130560, guid: d39b387ff5baa5a45bc8f0381a4f1dea,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9034580996819130560, guid: d39b387ff5baa5a45bc8f0381a4f1dea,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9034580996819130560, guid: d39b387ff5baa5a45bc8f0381a4f1dea,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9034580996819130560, guid: d39b387ff5baa5a45bc8f0381a4f1dea,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
