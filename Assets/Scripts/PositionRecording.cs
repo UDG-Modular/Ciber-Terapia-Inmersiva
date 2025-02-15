@@ -21,16 +21,23 @@ public class RecordPositionToMongo : MonoBehaviour
     {
         try
         {
+            string connectionString = MongoConfig.GetConnectionString();
+            if (string.IsNullOrEmpty(connectionString))
+            {
+                Debug.LogError("La cadena de conexión está vacía. No se puede conectar a MongoDB.");
+                return;
+            }
+
             var client = new MongoClient(connectionString);
             database = client.GetDatabase("Coordenadas_Jugador");
             string dateSuffix = DateTime.UtcNow.ToString("yyyy-MM-dd");
             string collectionName = $"{defaultString}-{dateSuffix}";
             collection = database.GetCollection<BsonDocument>(collectionName);
-            Debug.Log("Conexi�n exitosa a MongoDB");
+            Debug.Log("Conexión exitosa a MongoDB");
         }
         catch (Exception ex)
         {
-            Debug.LogError("Error de conexi�n a MongoDB: " + ex.Message);
+            Debug.LogError("Error de conexión a MongoDB: " + ex.Message);
         }
     }
 
@@ -60,6 +67,6 @@ public class RecordPositionToMongo : MonoBehaviour
         };
 
         await Task.Run(() => collection.InsertOne(document));
-        //Debug.Log("Posici�n guardada en MongoDB: " + document.ToJson());
+        //Debug.Log("Posición guardada en MongoDB: " + document.ToJson());
     }
 }
