@@ -6,7 +6,7 @@ using MongoDB.Bson;
 
 public class RecordPositionToMongo : MonoBehaviour
 {
-    public string defaultString = "NombreUsuario"; // Identificador del usuario
+    private string userName = UserData.UserName;
     public float recordInterval = 1.0f;
     private float timer;
     private IMongoCollection<BsonDocument> collection;
@@ -31,7 +31,7 @@ public class RecordPositionToMongo : MonoBehaviour
             var client = new MongoClient(connectionString);
             database = client.GetDatabase("Coordenadas_Jugador");
             string dateSuffix = DateTime.UtcNow.ToString("yyyy-MM-dd");
-            string collectionName = $"{defaultString}-{dateSuffix}";
+            string collectionName = $"{userName}-{dateSuffix}";
             collection = database.GetCollection<BsonDocument>(collectionName);
             Debug.Log("Conexión exitosa a MongoDB");
         }
@@ -58,7 +58,7 @@ public class RecordPositionToMongo : MonoBehaviour
 
         var document = new BsonDocument
         {
-            { "usuario", defaultString },
+            { "usuario", userName},
             { "tiempo", currentTime },
             { "x", position.x },
             { "y", position.y },
@@ -67,6 +67,5 @@ public class RecordPositionToMongo : MonoBehaviour
         };
 
         await Task.Run(() => collection.InsertOne(document));
-        //Debug.Log("Posición guardada en MongoDB: " + document.ToJson());
     }
 }
