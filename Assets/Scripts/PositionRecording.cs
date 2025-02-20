@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using MongoDB.Driver;
 using MongoDB.Bson;
 
@@ -30,8 +31,9 @@ public class RecordPositionToMongo : MonoBehaviour
 
             var client = new MongoClient(connectionString);
             database = client.GetDatabase("Coordenadas_Jugador");
+            string sceneName = SceneManager.GetActiveScene().name;
             string dateSuffix = DateTime.UtcNow.ToString("yyyy-MM-dd");
-            string collectionName = $"{userName}-{dateSuffix}";
+            string collectionName = $"{userName}-{sceneName}-{dateSuffix}";
             collection = database.GetCollection<BsonDocument>(collectionName);
             Debug.Log("Conexión exitosa a MongoDB");
         }
@@ -53,17 +55,15 @@ public class RecordPositionToMongo : MonoBehaviour
 
     private async void RecordPositionAsync()
     {
-        float currentTime = Time.time;
         Vector3 position = transform.position;
+        float currentTime = Time.time;
 
         var document = new BsonDocument
         {
-            { "usuario", userName},
             { "tiempo", currentTime },
             { "x", position.x },
             { "y", position.y },
-            { "z", position.z },
-            { "timestamp", DateTime.UtcNow }
+            { "z", position.z }
         };
 
         await Task.Run(() => collection.InsertOne(document));
