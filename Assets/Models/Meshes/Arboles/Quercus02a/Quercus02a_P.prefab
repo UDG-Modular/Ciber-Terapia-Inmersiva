@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8513969061827475000
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 4809f0e98d11f6646a4d8d9627938966,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1266.8691
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4809f0e98d11f6646a4d8d9627938966,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 26.169128
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4809f0e98d11f6646a4d8d9627938966,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 656.9872
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4809f0e98d11f6646a4d8d9627938966,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4809f0e98d11f6646a4d8d9627938966,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4809f0e98d11f6646a4d8d9627938966,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4809f0e98d11f6646a4d8d9627938966,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4809f0e98d11f6646a4d8d9627938966,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4809f0e98d11f6646a4d8d9627938966,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4809f0e98d11f6646a4d8d9627938966,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8521882241487688333, guid: 4809f0e98d11f6646a4d8d9627938966,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6103961910182504524, guid: 4809f0e98d11f6646a4d8d9627938966,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5007608717550678817, guid: 4809f0e98d11f6646a4d8d9627938966,
+        type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1440319431211850541, guid: 4809f0e98d11f6646a4d8d9627938966,
+        type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 628671535149579651, guid: 4809f0e98d11f6646a4d8d9627938966,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4809f0e98d11f6646a4d8d9627938966,
+        type: 3}
+      propertyPath: m_Name
+      value: Quercus02a
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848697098061488075, guid: 4809f0e98d11f6646a4d8d9627938966,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848697098061488075, guid: 4809f0e98d11f6646a4d8d9627938966,
+        type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4809f0e98d11f6646a4d8d9627938966, type: 3}

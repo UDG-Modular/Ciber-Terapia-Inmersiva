@@ -25,6 +25,9 @@ public class AudioCulling : MonoBehaviour
     {
         foreach (AudioSource audio in audioSources)
         {
+            Debug.Log(player.position);
+            Debug.Log(audio.transform.position);
+            Debug.Log("\n");
             float distance = Vector3.Distance(player.position, audio.transform.position);
             bool shouldBeActive = distance < activationDistance;
 

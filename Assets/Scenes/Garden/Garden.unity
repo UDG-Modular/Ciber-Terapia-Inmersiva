@@ -2320,7 +2320,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 61d582f1ed833b88b98d62f3412d6ec6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2328,8 +2328,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.1
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -2490,17 +2490,17 @@ PrefabInstance:
     - target: {fileID: 4450867042186633875, guid: 08d01b8ced769974db3e308e50ddfbf0,
         type: 3}
       propertyPath: m_LODs.Array.data[0].screenRelativeHeight
-      value: 0.34841773
+      value: 0.16611025
       objectReference: {fileID: 0}
     - target: {fileID: 4450867042186633875, guid: 08d01b8ced769974db3e308e50ddfbf0,
         type: 3}
       propertyPath: m_LODs.Array.data[1].screenRelativeHeight
-      value: 0.113255136
+      value: 0.08316375
       objectReference: {fileID: 0}
     - target: {fileID: 4450867042186633875, guid: 08d01b8ced769974db3e308e50ddfbf0,
         type: 3}
       propertyPath: m_LODs.Array.data[2].screenRelativeHeight
-      value: 0.048423517
+      value: 0.04168084
       objectReference: {fileID: 0}
     - target: {fileID: 5793020339707013327, guid: 08d01b8ced769974db3e308e50ddfbf0,
         type: 3}
@@ -3265,7 +3265,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 61d582f1ed833b88b98d62f3412d6ec6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3273,8 +3273,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.1
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -3477,7 +3477,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 61d582f1ed833b88b98d62f3412d6ec6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3485,8 +3485,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.1
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -4599,17 +4599,17 @@ PrefabInstance:
     - target: {fileID: 4742473837712756890, guid: 5e43c02180f87944eafe74300dd6fe25,
         type: 3}
       propertyPath: m_LODs.Array.data[0].screenRelativeHeight
-      value: 0.3831951
+      value: 0.23066767
       objectReference: {fileID: 0}
     - target: {fileID: 4742473837712756890, guid: 5e43c02180f87944eafe74300dd6fe25,
         type: 3}
       propertyPath: m_LODs.Array.data[1].screenRelativeHeight
-      value: 0.1327383
+      value: 0.08444379
       objectReference: {fileID: 0}
     - target: {fileID: 4742473837712756890, guid: 5e43c02180f87944eafe74300dd6fe25,
         type: 3}
       propertyPath: m_LODs.Array.data[2].screenRelativeHeight
-      value: 0.057236508
+      value: 0.023349717
       objectReference: {fileID: 0}
     - target: {fileID: 7709374898262114150, guid: 5e43c02180f87944eafe74300dd6fe25,
         type: 3}
@@ -4921,8 +4921,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3783285358356829759, guid: 319e9818fbc7a2b40b8fb6fc3c7961f5,
         type: 3}
+      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
+      value: 0.32553065
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783285358356829759, guid: 319e9818fbc7a2b40b8fb6fc3c7961f5,
+        type: 3}
       propertyPath: m_LODs.Array.data[1].screenRelativeHeight
-      value: 0.17163678
+      value: 0.12265657
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783285358356829759, guid: 319e9818fbc7a2b40b8fb6fc3c7961f5,
+        type: 3}
+      propertyPath: m_LODs.Array.data[2].screenRelativeHeight
+      value: 0.0708947
       objectReference: {fileID: 0}
     - target: {fileID: 6493585161770711351, guid: 319e9818fbc7a2b40b8fb6fc3c7961f5,
         type: 3}
@@ -7423,7 +7433,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 61d582f1ed833b88b98d62f3412d6ec6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -7431,8 +7441,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.1
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -8702,8 +8712,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3783285358356829759, guid: 319e9818fbc7a2b40b8fb6fc3c7961f5,
         type: 3}
+      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
+      value: 0.32553065
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783285358356829759, guid: 319e9818fbc7a2b40b8fb6fc3c7961f5,
+        type: 3}
       propertyPath: m_LODs.Array.data[1].screenRelativeHeight
-      value: 0.17163678
+      value: 0.12111569
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783285358356829759, guid: 319e9818fbc7a2b40b8fb6fc3c7961f5,
+        type: 3}
+      propertyPath: m_LODs.Array.data[2].screenRelativeHeight
+      value: 0.06740237
       objectReference: {fileID: 0}
     - target: {fileID: 6493585161770711351, guid: 319e9818fbc7a2b40b8fb6fc3c7961f5,
         type: 3}
@@ -10426,8 +10446,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3783285358356829759, guid: 319e9818fbc7a2b40b8fb6fc3c7961f5,
         type: 3}
+      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
+      value: 0.33057353
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783285358356829759, guid: 319e9818fbc7a2b40b8fb6fc3c7961f5,
+        type: 3}
       propertyPath: m_LODs.Array.data[1].screenRelativeHeight
-      value: 0.17163678
+      value: 0.12111569
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783285358356829759, guid: 319e9818fbc7a2b40b8fb6fc3c7961f5,
+        type: 3}
+      propertyPath: m_LODs.Array.data[2].screenRelativeHeight
+      value: 0.065122455
       objectReference: {fileID: 0}
     - target: {fileID: 6493585161770711351, guid: 319e9818fbc7a2b40b8fb6fc3c7961f5,
         type: 3}
@@ -11925,7 +11955,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 61d582f1ed833b88b98d62f3412d6ec6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -11933,8 +11963,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.1
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -14192,8 +14222,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3783285358356829759, guid: 319e9818fbc7a2b40b8fb6fc3c7961f5,
         type: 3}
+      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
+      value: 0.32804725
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783285358356829759, guid: 319e9818fbc7a2b40b8fb6fc3c7961f5,
+        type: 3}
       propertyPath: m_LODs.Array.data[1].screenRelativeHeight
-      value: 0.17163678
+      value: 0.12111569
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783285358356829759, guid: 319e9818fbc7a2b40b8fb6fc3c7961f5,
+        type: 3}
+      propertyPath: m_LODs.Array.data[2].screenRelativeHeight
+      value: 0.06740237
       objectReference: {fileID: 0}
     - target: {fileID: 6493585161770711351, guid: 319e9818fbc7a2b40b8fb6fc3c7961f5,
         type: 3}
@@ -14918,7 +14958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 909648663}
-  activationDistance: 20
+  activationDistance: 30
   fadeDuration: 1.5
 --- !u!1001 &636377144
 PrefabInstance:
@@ -18682,7 +18722,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 61d582f1ed833b88b98d62f3412d6ec6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -18690,8 +18730,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.1
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -19020,85 +19060,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6520400025577231567, guid: c08e7d3fcda6fcc80ac2469481770625,
     type: 3}
   m_PrefabInstance: {fileID: 453273787}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &809950452
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 863138814}
-    m_Modifications:
-    - target: {fileID: 3092715126367081507, guid: 5e8bac53d0a06d53fb4dfbeba01f80e3,
-        type: 3}
-      propertyPath: m_StaticShadowCaster
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3597096776269166070, guid: 5e8bac53d0a06d53fb4dfbeba01f80e3,
-        type: 3}
-      propertyPath: m_Name
-      value: Bamboo_Thicket (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4224557703169158988, guid: 5e8bac53d0a06d53fb4dfbeba01f80e3,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 55.252785
-      objectReference: {fileID: 0}
-    - target: {fileID: 4224557703169158988, guid: 5e8bac53d0a06d53fb4dfbeba01f80e3,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.3209672
-      objectReference: {fileID: 0}
-    - target: {fileID: 4224557703169158988, guid: 5e8bac53d0a06d53fb4dfbeba01f80e3,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 68.13301
-      objectReference: {fileID: 0}
-    - target: {fileID: 4224557703169158988, guid: 5e8bac53d0a06d53fb4dfbeba01f80e3,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4224557703169158988, guid: 5e8bac53d0a06d53fb4dfbeba01f80e3,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4224557703169158988, guid: 5e8bac53d0a06d53fb4dfbeba01f80e3,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4224557703169158988, guid: 5e8bac53d0a06d53fb4dfbeba01f80e3,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4224557703169158988, guid: 5e8bac53d0a06d53fb4dfbeba01f80e3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 4224557703169158988, guid: 5e8bac53d0a06d53fb4dfbeba01f80e3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4224557703169158988, guid: 5e8bac53d0a06d53fb4dfbeba01f80e3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5e8bac53d0a06d53fb4dfbeba01f80e3, type: 3}
---- !u!4 &809950453 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4224557703169158988, guid: 5e8bac53d0a06d53fb4dfbeba01f80e3,
-    type: 3}
-  m_PrefabInstance: {fileID: 809950452}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &811413697
 PrefabInstance:
@@ -20500,7 +20461,6 @@ Transform:
   - {fileID: 2094383439}
   - {fileID: 589155928}
   - {fileID: 963158925}
-  - {fileID: 809950453}
   - {fileID: 2103459778269811006}
   - {fileID: 81465006}
   - {fileID: 1345721422}
@@ -21027,7 +20987,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 61d582f1ed833b88b98d62f3412d6ec6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -21035,8 +20995,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.1
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -24149,7 +24109,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 61d582f1ed833b88b98d62f3412d6ec6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -24157,8 +24117,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.1
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -28358,7 +28318,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 61d582f1ed833b88b98d62f3412d6ec6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -28366,8 +28326,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.1
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -28486,7 +28446,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 61d582f1ed833b88b98d62f3412d6ec6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -28494,8 +28454,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.1
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -29262,7 +29222,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 61d582f1ed833b88b98d62f3412d6ec6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -29270,8 +29230,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.1
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -30502,7 +30462,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 46.80435, y: 4.216902, z: -20.47992}
   m_LocalScale: {x: 194.87457, y: 39.830605, z: 181.6361}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 943308115}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -31065,7 +31025,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 61d582f1ed833b88b98d62f3412d6ec6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -31073,8 +31033,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.1
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -35255,7 +35215,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 61d582f1ed833b88b98d62f3412d6ec6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -35263,8 +35223,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.1
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -37821,7 +37781,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 61d582f1ed833b88b98d62f3412d6ec6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -37829,8 +37789,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.1
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -46100,7 +46060,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 61d582f1ed833b88b98d62f3412d6ec6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -46108,8 +46068,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.1
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -46683,7 +46643,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 61d582f1ed833b88b98d62f3412d6ec6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -46691,8 +46651,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.1
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -47976,7 +47936,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 61d582f1ed833b88b98d62f3412d6ec6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -47984,8 +47944,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.1
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -52286,17 +52246,17 @@ PrefabInstance:
     - target: {fileID: 4450867042186633875, guid: 08d01b8ced769974db3e308e50ddfbf0,
         type: 3}
       propertyPath: m_LODs.Array.data[0].screenRelativeHeight
-      value: 0.34841773
+      value: 0.17154439
       objectReference: {fileID: 0}
     - target: {fileID: 4450867042186633875, guid: 08d01b8ced769974db3e308e50ddfbf0,
         type: 3}
       propertyPath: m_LODs.Array.data[1].screenRelativeHeight
-      value: 0.113255136
+      value: 0.07690847
       objectReference: {fileID: 0}
     - target: {fileID: 4450867042186633875, guid: 08d01b8ced769974db3e308e50ddfbf0,
         type: 3}
       propertyPath: m_LODs.Array.data[2].screenRelativeHeight
-      value: 0.048423517
+      value: 0.040777564
       objectReference: {fileID: 0}
     - target: {fileID: 5793020339707013327, guid: 08d01b8ced769974db3e308e50ddfbf0,
         type: 3}

@@ -55,7 +55,11 @@ QualitySettings:
     terrainBillboardStart: 50
     terrainFadeLength: 5
     terrainMaxTrees: 50
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - Standalone
+    - Server
+    - Android
+    - Windows Store Apps
   - serializedVersion: 3
     name: Balanced
     pixelLightCount: 1
@@ -105,7 +109,11 @@ QualitySettings:
     terrainBillboardStart: 50
     terrainFadeLength: 5
     terrainMaxTrees: 50
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - Windows Store Apps
+    - Android
+    - Server
+    - Standalone
   - serializedVersion: 3
     name: High Fidelity
     pixelLightCount: 2
@@ -155,7 +163,11 @@ QualitySettings:
     terrainBillboardStart: 50
     terrainFadeLength: 5
     terrainMaxTrees: 50
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - Standalone
+    - Server
+    - Android
+    - Windows Store Apps
   - serializedVersion: 3
     name: Quest 2
     pixelLightCount: 2
@@ -180,7 +192,7 @@ QualitySettings:
     useLegacyDetailDistribution: 1
     vSyncCount: 1
     realtimeGICPUUsage: 25
-    lodBias: 2
+    lodBias: 1
     maximumLODLevel: 0
     enableLODCrossFade: 1
     streamingMipmapsActive: 1
@@ -206,9 +218,7 @@ QualitySettings:
     terrainFadeLength: 5
     terrainMaxTrees: 50
     excludedTargetPlatforms:
-    - Standalone
     - Server
-    - Windows Store Apps
   m_TextureMipmapLimitGroupNames: []
   m_PerPlatformDefaultQuality:
     Android: 1

@@ -72,3 +72,5 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 Assets/Scripts/mongo_config.txt
 Assets/Scripts/mongo_config.txt.meta
+Assets/StreamingAssets/mongo_config.txt
+Assets/StreamingAssets/mongo_config.txt.meta
