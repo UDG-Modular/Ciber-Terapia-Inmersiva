@@ -32,14 +32,14 @@ public class CambiarControles : MonoBehaviour
 
     private void ActivarControlesMetaQuest()
     {
-        Debug.Log("Se activaron los controles de Meta Quest 2.");
+        //Debug.Log("Se activaron los controles de Meta Quest 2.");
         // Aqui se implementan las configuraciones para los controles de Meta Quest.
 
     }
 
     private void ActivarControlesXbox()
     {
-        Debug.Log("Se activaron los controles de Xbox.");
+        //Debug.Log("Se activaron los controles de Xbox.");
         // Aqui se implementan las configuraciones para los controles de Xbox.
 
     }

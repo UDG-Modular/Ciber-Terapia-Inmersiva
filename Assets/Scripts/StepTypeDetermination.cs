@@ -40,7 +40,7 @@ public class FootstepSound : MonoBehaviour
         // Detect if the capsule has moved and if the footstep sound is not already playing
         if (HasPlayerMoved() && !isPlayingFootstep)
         {
-            Debug.Log("Capsule Moved");
+            //Debug.Log("Capsule Moved");
             PlayFootstepSound();
         }
     }
@@ -92,7 +92,7 @@ public class FootstepSound : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("No sound mapping found for texture index: " + dominantTextureIndex);
+            //Debug.LogWarning("No sound mapping found for texture index: " + dominantTextureIndex);
         }
     }
 
@@ -101,6 +101,5 @@ public class FootstepSound : MonoBehaviour
         // Wait until the audio clip finishes playing
         yield return new WaitForSeconds(clip.length);
         isPlayingFootstep = false; // Reset the flag after the sound finishes
-        Debug.Log("Footstep sound finished");
     }
 }

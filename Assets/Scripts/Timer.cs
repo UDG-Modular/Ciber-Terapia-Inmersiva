@@ -67,11 +67,11 @@ public class Timer : MonoBehaviour
             Transform[] allChildren = jugador.GetComponentsInChildren<Transform>(true); // Get all children (including inactive)
             foreach (Transform child in allChildren)
             {
-                Debug.Log(child);
+                //Debug.Log(child);
                 if (child.name == "timeOutPanel") // Match by name
                 {
                     panelTiempoTerminado = child.gameObject;
-                    Debug.Log("Found");
+                    //Debug.Log("Found");
                     return; // Stop once found
                 }
             }

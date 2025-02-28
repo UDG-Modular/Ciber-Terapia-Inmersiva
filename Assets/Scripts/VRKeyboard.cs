@@ -8,7 +8,7 @@ public class VRKeyboard : MonoBehaviour
 
     public void OpenKeyboard()
     {
-        Debug.Log("Opening system keyboard");
+        //Debug.Log("Opening system keyboard");
         // Ensure the input field is in focus and the keyboard opens.
         keyboard = TouchScreenKeyboard.Open(tmpInputField.text, TouchScreenKeyboardType.Default);
     }

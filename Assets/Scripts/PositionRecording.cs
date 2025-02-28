@@ -35,7 +35,7 @@ public class RecordPositionToMongo : MonoBehaviour
             string dateSuffix = DateTime.UtcNow.ToString("yyyy-MM-dd");
             string collectionName = $"{userName}-{sceneName}-{dateSuffix}";
             collection = database.GetCollection<BsonDocument>(collectionName);
-            Debug.Log("Conexión exitosa a MongoDB");
+            //Debug.Log("Conexión exitosa a MongoDB");
         }
         catch (Exception ex)
         {
@@ -57,6 +57,7 @@ public class RecordPositionToMongo : MonoBehaviour
     {
         Vector3 position = transform.position;
         float currentTime = Time.time;
+        var localCollection = collection;
 
         var document = new BsonDocument
         {
@@ -66,6 +67,6 @@ public class RecordPositionToMongo : MonoBehaviour
             { "z", position.z }
         };
 
-        await Task.Run(() => collection.InsertOne(document));
+        await Task.Run(() => localCollection.InsertOne(document));
     }
 }

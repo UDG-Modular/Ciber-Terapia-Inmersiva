@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class AudioCulling : MonoBehaviour
 {
@@ -8,10 +9,13 @@ public class AudioCulling : MonoBehaviour
     public float fadeDuration = 1.5f; // Time in seconds for fade-in/out
     private AudioSource[] audioSources;
 
+
     void Start()
     {
+        List<AudioSource> audioSourceList = new List<AudioSource>();
         // Get all Audio Sources in child objects
-        audioSources = GetComponentsInChildren<AudioSource>();
+        GetComponentsInChildren(audioSourceList);
+        audioSources = audioSourceList.ToArray();
 
         // Start with all sources at volume 0 and disabled
         foreach (AudioSource audio in audioSources)
@@ -25,10 +29,8 @@ public class AudioCulling : MonoBehaviour
     {
         foreach (AudioSource audio in audioSources)
         {
-            Debug.Log(player.position);
-            Debug.Log(audio.transform.position);
-            Debug.Log("\n");
-            float distance = Vector3.Distance(player.position, audio.transform.position);
+            Vector3 playerPos = player.position;
+            float distance = Vector3.Distance(playerPos, audio.transform.position);
             bool shouldBeActive = distance < activationDistance;
 
             if (shouldBeActive && !audio.enabled)

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class LongAudioCulling : MonoBehaviour
 {
@@ -12,7 +13,9 @@ public class LongAudioCulling : MonoBehaviour
     void Start()
     {
         // Obtener todas las fuentes de audio en los hijos
-        audioSources = GetComponentsInChildren<AudioSource>();
+        List<AudioSource> audioSourceList = new List<AudioSource>();
+        GetComponentsInChildren(audioSourceList);
+        audioSources = audioSourceList.ToArray();
 
         // Iniciar todas las fuentes con volumen 0, desactivadas y con un tiempo aleatorio
         foreach (AudioSource audio in audioSources)
