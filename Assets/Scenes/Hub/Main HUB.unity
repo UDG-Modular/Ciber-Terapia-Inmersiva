@@ -8506,8 +8506,18 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8222067253334388856, guid: d39b387ff5baa5a45bc8f0381a4f1dea,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1168114285}
   m_SourcePrefab: {fileID: 100100000, guid: d39b387ff5baa5a45bc8f0381a4f1dea, type: 3}
+--- !u!1 &696754635 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8222067253334388856, guid: d39b387ff5baa5a45bc8f0381a4f1dea,
+    type: 3}
+  m_PrefabInstance: {fileID: 696754634}
+  m_PrefabAsset: {fileID: 0}
 --- !u!20 &696754637 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 4461354704996322476, guid: d39b387ff5baa5a45bc8f0381a4f1dea,
@@ -10054,7 +10064,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 696754637}
     - target: {fileID: 4985317198561114567, guid: 40bd75ad1df85854d951ca9d811472eb,
         type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
@@ -13911,6 +13921,49 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 696754634}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1168114285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696754635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6a61e9aba9e7d4092bcebbdb5eb0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flightSpeed: 5
+  gravity: 9.81
+  doublePressTime: 0.3
+  flightOnSound: {fileID: 0}
+  flightOffSound: {fileID: 0}
+  rightPrimaryButton:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Right Primary Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: eff8a14b-af7b-442b-a06a-c0fc3b992345
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -8588451977110086105, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
+  rightSecondaryButton:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Right Secondary Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 1c60642a-355d-4247-90d1-95f85747841f
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -5031921982344643454, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
 --- !u!1 &1169980364 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1077606565794538, guid: 6a8a77a07da1ab74bb3d34fe70501b7d,

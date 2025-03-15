@@ -14,6 +14,9 @@ public class PlayerFlight : MonoBehaviour
     private bool isFlying = false;
     private float lastPressTime = 0f;
 
+    public InputActionProperty rightPrimaryButton;
+    public InputActionProperty rightSecondaryButton;
+
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -28,7 +31,7 @@ public class PlayerFlight : MonoBehaviour
 
     private void HandleFlightInput()
     {
-        if (OVRInput.GetDown(OVRInput.Button.One))
+        if (rightPrimaryButton.action.IsPressed())
         {
             if (Time.time - lastPressTime <= doublePressTime)
             {
@@ -39,11 +42,11 @@ public class PlayerFlight : MonoBehaviour
 
         if (isFlying)
         {
-            if (OVRInput.Get(OVRInput.Button.One))
+            if (rightPrimaryButton.action.IsPressed())
             {
                 characterController.Move(Vector3.up * flightSpeed * Time.deltaTime);
             }
-            if (OVRInput.Get(OVRInput.Button.Two))
+            if (rightSecondaryButton.action.IsPressed())
             {
                 characterController.Move(Vector3.down * flightSpeed * Time.deltaTime);
             }
