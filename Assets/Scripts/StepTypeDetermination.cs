@@ -37,6 +37,8 @@ public class FootstepSound : MonoBehaviour
 
     void Update()
     {
+        if (PlayerFlight.IsFlying) return;
+
         // Detect if the capsule has moved and if the footstep sound is not already playing
         if (HasPlayerMoved() && !isPlayingFootstep)
         {

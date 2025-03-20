@@ -1429,9 +1429,9 @@ GameObject:
   - component: {fileID: 7212835984552042432}
   - component: {fileID: 4756506547083947014}
   - component: {fileID: 5428751829063910579}
-  - component: {fileID: 5711646870658776931}
   - component: {fileID: 5032134431014928719}
   - component: {fileID: 6340653054485333664}
+  - component: {fileID: 4132421404790168910}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1699,19 +1699,6 @@ MonoBehaviour:
   m_LocomotionProvider: {fileID: 6912778836271399342}
   m_MinHeight: 0
   m_MaxHeight: Infinity
---- !u!114 &5711646870658776931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8222067253334388856}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c4300d6c61c6cdddbe60304641f5a9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 100
 --- !u!114 &5032134431014928719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1724,7 +1711,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f067775927f82dcc2824b2af34058cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultString: NombreUsuario
   recordInterval: 1
 --- !u!114 &6340653054485333664
 MonoBehaviour:
@@ -1751,6 +1737,50 @@ MonoBehaviour:
     footstepSound: {fileID: 8300000, guid: d35e3e94c2371784d9e0ddcc2cbfccaa, type: 3}
   - textureIndices: 11000000
     footstepSound: {fileID: 8300000, guid: 13c09d85bc95db4409bc028fbe0bd102, type: 3}
+--- !u!114 &4132421404790168910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8222067253334388856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6a61e9aba9e7d4092bcebbdb5eb0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flightSpeed: 5
+  gravity: 9.81
+  doublePressTime: 0.3
+  flightOnSound: {fileID: 8300000, guid: ae9966d83b8a5444984b0f52718690e1, type: 3}
+  flightOffSound: {fileID: 8300000, guid: d8ed08512a8680b4cbe05be1fb90be9f, type: 3}
+  audioSource: {fileID: 0}
+  rightPrimaryButton:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Right Primary Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: eff8a14b-af7b-442b-a06a-c0fc3b992345
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -8588451977110086105, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
+  rightSecondaryButton:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Right Secondary Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 1c60642a-355d-4247-90d1-95f85747841f
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -5031921982344643454, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
 --- !u!1001 &1054342492900486108
 PrefabInstance:
   m_ObjectHideFlags: 0

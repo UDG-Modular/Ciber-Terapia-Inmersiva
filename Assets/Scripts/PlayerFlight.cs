@@ -1,18 +1,23 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class PlayerFlight : MonoBehaviour
 {
     [SerializeField] private float flightSpeed = 5f;
     [SerializeField] private float gravity = 9.81f;
     [SerializeField] private float doublePressTime = 0.3f;
-    [SerializeField] private AudioClip flightOnSound; // Sonido al activar
-    [SerializeField] private AudioClip flightOffSound; // Sonido al desactivar
-    private AudioSource audioSource;
+    [SerializeField] private float maxFlightHeight = 20f; // Altura máxima de vuelo
+    [SerializeField] private AudioClip flightOnSound;
+    [SerializeField] private AudioClip flightOffSound;
+    [SerializeField] private AudioSource audioSource;
 
     private CharacterController characterController;
-    private bool isFlying = false;
-    private float lastPressTime = 0f;
+    [SerializeField] private ActionBasedContinuousMoveProvider moveProvider;
+    public static bool IsFlying { get; private set; } = false;
+
+    private float lastPressTime = -1f;
+    private float initialY; // Guarda la altura inicial al volar
 
     public InputActionProperty rightPrimaryButton;
     public InputActionProperty rightSecondaryButton;
@@ -20,7 +25,6 @@ public class PlayerFlight : MonoBehaviour
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
-        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -31,47 +35,65 @@ public class PlayerFlight : MonoBehaviour
 
     private void HandleFlightInput()
     {
-        if (rightPrimaryButton.action.IsPressed())
+        if (rightPrimaryButton.action.WasPressedThisFrame())
         {
             if (Time.time - lastPressTime <= doublePressTime)
             {
                 ToggleFlight();
+                lastPressTime = -1f; // Evita múltiples activaciones
             }
-            lastPressTime = Time.time;
+            else
+            {
+                lastPressTime = Time.time;
+            }
         }
 
-        if (isFlying)
+        if (IsFlying)
         {
-            if (rightPrimaryButton.action.IsPressed())
+            gravity = 0;
+            Vector3 flightVelocity = Vector3.zero;
+
+            if (rightPrimaryButton.action.IsPressed()) // Subir
             {
-                characterController.Move(Vector3.up * flightSpeed * Time.deltaTime);
+                if (transform.position.y < initialY + maxFlightHeight) // Límite de altura
+                {
+                    flightVelocity += Vector3.up * flightSpeed;
+                }
             }
-            if (rightSecondaryButton.action.IsPressed())
+            if (rightSecondaryButton.action.IsPressed()) // Bajar
             {
-                characterController.Move(Vector3.down * flightSpeed * Time.deltaTime);
+                flightVelocity += Vector3.down * flightSpeed;
             }
+
+            characterController.Move(flightVelocity * Time.deltaTime);
         }
     }
 
     private void ToggleFlight()
     {
-        isFlying = !isFlying;
-        if (isFlying)
+        IsFlying = !IsFlying;
+        audioSource.PlayOneShot(IsFlying ? flightOnSound : flightOffSound);
+        Debug.Log(IsFlying ? "Vuelo Activado" : "Vuelo Desactivado");
+
+        if (IsFlying)
         {
-            audioSource.PlayOneShot(flightOnSound);
-            Debug.Log("Vuelo Activado");
+            moveProvider.moveSpeed = 10;
+            initialY = transform.position.y; // Guarda la altura al empezar a volar
         }
-        else
+        if (!IsFlying)
         {
-            audioSource.PlayOneShot(flightOffSound);
-            Debug.Log("Vuelo Desactivado");
+            moveProvider.moveSpeed = 5;
         }
     }
 
     private void ApplyGravity()
     {
-        if (!isFlying && !characterController.isGrounded)
+        Debug.Log("Fly: " + IsFlying);
+        Debug.Log("Grounded: " + characterController.isGrounded);
+        gravity = 9.81f;
+        if (!IsFlying && !characterController.isGrounded)
         {
+            Debug.Log("Gravity enabled");
             characterController.Move(Vector3.down * gravity * Time.deltaTime);
         }
     }
