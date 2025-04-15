@@ -73,7 +73,7 @@ public class PlayerFlight : MonoBehaviour
     {
         IsFlying = !IsFlying;
         audioSource.PlayOneShot(IsFlying ? flightOnSound : flightOffSound);
-        Debug.Log(IsFlying ? "Vuelo Activado" : "Vuelo Desactivado");
+        //Debug.Log(IsFlying ? "Vuelo Activado" : "Vuelo Desactivado");
 
         if (IsFlying)
         {
@@ -88,12 +88,12 @@ public class PlayerFlight : MonoBehaviour
 
     private void ApplyGravity()
     {
-        Debug.Log("Fly: " + IsFlying);
-        Debug.Log("Grounded: " + characterController.isGrounded);
+        //Debug.Log("Fly: " + IsFlying);
+        //Debug.Log("Grounded: " + characterController.isGrounded);
         gravity = 9.81f;
         if (!IsFlying && !characterController.isGrounded)
         {
-            Debug.Log("Gravity enabled");
+            //Debug.Log("Gravity enabled");
             characterController.Move(Vector3.down * gravity * Time.deltaTime);
         }
     }

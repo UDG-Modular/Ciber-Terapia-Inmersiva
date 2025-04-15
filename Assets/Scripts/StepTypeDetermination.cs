@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using MongoDB.Driver;
 
 public class FootstepSound : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class FootstepSound : MonoBehaviour
     private Vector3 terrainPosition;
     private bool isPlayingFootstep = false; // Prevent overlapping sounds
     private Vector3 lastPosition; // Track last position of the capsule
+    private CharacterController characterController;
 
     [System.Serializable]
     public class TextureSoundMapping
@@ -24,6 +26,7 @@ public class FootstepSound : MonoBehaviour
     {
         terrainData = terrain.terrainData;
         terrainPosition = terrain.GetPosition();
+        characterController = GetComponent<CharacterController>();
 
         textureSoundMap = new Dictionary<int, AudioClip>();
         foreach (var mapping in textureSoundMappings)
@@ -37,7 +40,7 @@ public class FootstepSound : MonoBehaviour
 
     void Update()
     {
-        if (PlayerFlight.IsFlying) return;
+        if (PlayerFlight.IsFlying || !characterController.isGrounded) return;
 
         // Detect if the capsule has moved and if the footstep sound is not already playing
         if (HasPlayerMoved() && !isPlayingFootstep)
