@@ -22020,10 +22020,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 635823903360992358, guid: d39b387ff5baa5a45bc8f0381a4f1dea,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2683233320622495267, guid: d39b387ff5baa5a45bc8f0381a4f1dea,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3165375296025877852, guid: d39b387ff5baa5a45bc8f0381a4f1dea,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 4132421404790168910, guid: d39b387ff5baa5a45bc8f0381a4f1dea,
         type: 3}
