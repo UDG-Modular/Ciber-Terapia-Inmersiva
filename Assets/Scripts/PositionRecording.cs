@@ -8,17 +8,21 @@ using MongoDB.Bson;
 public class RecordPositionToMongo : MonoBehaviour
 {
     private string userName = UserData.UserName;
-    public float recordInterval = 1.0f;
+    private float recordInterval = 1.0f;
     private float timer;
     private IMongoCollection<BsonDocument> collection;
     private IMongoDatabase database;
+    private string sceneName;
+    private string sessionId;
+    private string fecha;
 
-    private void Start()
+    private async void Start()
     {
-        ConnectToMongo();
+        Debug.Log(userName);
+        await ConnectToMongo();
     }
 
-    private void ConnectToMongo()
+    private async Task ConnectToMongo()
     {
         try
         {
@@ -31,15 +35,49 @@ public class RecordPositionToMongo : MonoBehaviour
 
             var client = new MongoClient(connectionString);
             database = client.GetDatabase("Coordenadas_Jugador");
-            string sceneName = SceneManager.GetActiveScene().name;
-            string dateSuffix = DateTime.UtcNow.ToString("yyyy-MM-dd");
-            string collectionName = $"{userName}-{sceneName}-{dateSuffix}";
+
+            sceneName = SceneManager.GetActiveScene().name;
+            fecha = DateTime.UtcNow.ToString("yyyy-MM-dd");
+            sessionId = UserData.SessionID;
+
+            string collectionName = "SesionesCompletas";
             collection = database.GetCollection<BsonDocument>(collectionName);
-            //Debug.Log("Conexión exitosa a MongoDB");
+
+            await CrearDocumentoSesionSiNoExiste();
         }
         catch (Exception ex)
         {
             Debug.LogError("Error de conexión a MongoDB: " + ex.Message);
+        }
+    }
+
+    private async Task CrearDocumentoSesionSiNoExiste()
+    {
+        var filtro = Builders<BsonDocument>.Filter.Eq("datosSesion.sessionId", sessionId);
+        bool existe = await collection.Find(filtro).AnyAsync();
+
+        if (!existe)
+        {
+            var documento = new BsonDocument
+            {
+                { "datosSesion", new BsonDocument
+                    {
+                        { "userName", userName },
+                        { "sessionId", sessionId },
+                        { "fecha", fecha },
+                        { "completada", false },
+                        { "escenas", new BsonDocument() },
+                        { "horaInicio", DateTime.UtcNow },
+                        { "horaFin", BsonNull.Value }
+                    }
+                },
+                { "coordenadas", new BsonDocument
+                    {
+                        { "escena", new BsonDocument() }
+                    }
+                }
+            };
+            await collection.InsertOneAsync(documento);
         }
     }
 
@@ -57,16 +95,43 @@ public class RecordPositionToMongo : MonoBehaviour
     {
         Vector3 position = transform.position;
         float currentTime = Time.time;
-        var localCollection = collection;
 
         var document = new BsonDocument
-        {
-            { "tiempo", currentTime },
-            { "x", position.x },
-            { "y", position.y },
-            { "z", position.z }
-        };
+    {
+        { "tiempo", currentTime },
+        { "x", position.x },
+        { "y", position.y },
+        { "z", position.z }
+    };
 
-        await Task.Run(() => localCollection.InsertOne(document));
+        var startTime = DateTime.UtcNow;
+
+        try
+        {
+            // Aquí asumo que tienes una referencia a tu documento raíz ya cargado
+            var filter = Builders<BsonDocument>.Filter.Eq("datosSesion.sessionId", sessionId);
+            var update = Builders<BsonDocument>.Update.Push($"coordenadas.escena.{sceneName}", document);
+            await database.GetCollection<BsonDocument>("SesionesCompletas").UpdateOneAsync(filter, update);
+
+            var endTime = DateTime.UtcNow;
+            var latencyMs = (endTime - startTime).TotalMilliseconds;
+            Debug.Log($"Registro insertado. Latencia: {latencyMs} ms");
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError($"Error insertando coordenadas: {ex.Message}");
+        }
+    }
+
+
+    private async void OnApplicationQuit()
+    {
+        var filtro = Builders<BsonDocument>.Filter.Eq("datosSesion.sessionId", sessionId);
+
+        var update = Builders<BsonDocument>.Update
+            .Set("datosSesion.completada", true)
+            .Set("datosSesion.horaFin", DateTime.UtcNow);
+
+        await collection.UpdateOneAsync(filtro, update);
     }
 }

@@ -20,7 +20,7 @@ public class Timer : MonoBehaviour
     {
         if (!temporizadorActivo || panelInstrucciones == null) return;
 
-        if (panelMostrado && tiempoPanelActivo <= 0)
+        if (!panelMostrado && tiempoPanelActivo <= 0)
         {
             DesactivarPanel();
         }
@@ -40,6 +40,7 @@ public class Timer : MonoBehaviour
             {
                 if (child.name == "InstructionPanel") // Match by name
                 {
+                    Debug.Log("Encontrado");
                     panelInstrucciones = child.gameObject;
                     return; // Stop once found
                 }
